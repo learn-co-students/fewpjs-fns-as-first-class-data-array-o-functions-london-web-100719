@@ -52,9 +52,11 @@ function swimFortyLaps() {
 }
 ```
 
-We're going to make the function more compact by passing in `postRunActivity`,
-which will run whichever function is being passed in, since each day we start
-with a 5 mile run.
+We're going to make our code more compact by passing in `postRunActivity`.
+This function will first execute `runFiveMiles` first, since each day's exercise
+routine starts with this activity. Our argument `postRunActivity` will run whichever
+named function is being passed in. This will reduce the amount of repitition we have
+in our code.
 
 ```js
 function exerciseRoutine(postRunActivity) {
@@ -63,8 +65,9 @@ function exerciseRoutine(postRunActivity) {
 }
 ```
 
-Now, let's take the information for each day's workout and create a named function
-for each. Set each to a constant with the name of the day of the week, like below:
+Now, let's take the list of each day's workout and create a named function for each. 
+Create variables for each day of the week to a constant, and set them to the corresponding
+functions, like below:
 
 ```js
 const Monday = function() {
@@ -73,11 +76,11 @@ const Monday = function() {
 ```
 
 Without further ado, let's create our "Array o' Functions!". Create a variable
-called `functionsArray` with your `monday` through `friday` function variables as
-values in the array.
+called `functionsArray` with your `monday` through `friday` constants as values
+in the array.
 
-Create a function called `printRoutine` that will iterate over `functionsArray` and
-print out this week's routine. 
+Lastly, create a function called `printRoutine` that will iterate over our `functionsArray`
+and print out this week's routine.
 
 ## Conclusion
 
