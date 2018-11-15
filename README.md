@@ -66,11 +66,11 @@ function exerciseRoutine(postRunActivity) {
 ```
 
 Now, let's take the list of each day's workout and create a named function for each. 
-Create variables for each day of the week to a constant, and set them to the corresponding
+Create variables for each day of the week to a variable, and set them to the corresponding
 functions, like below:
 
 ```js
-const Monday = function() {
+var Monday = function() {
   exerciseRoutine(liftWeights);
 }
 ```
