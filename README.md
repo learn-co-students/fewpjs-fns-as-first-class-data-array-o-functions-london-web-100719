@@ -96,7 +96,5 @@ the array and returns the full exercise routine.
 
 This lab demonstrates another method of leveraging the power of JavaScript functions--
 And there's still so much more! Can you think of ways to make writing each function
-more compact (hint: "arrow functions")? Can you think of a solution to pass in 
-potentially more variables and functionality to each daily routine? What about if we
-decided to introduce an option 3rd activity, like a cool down, or an after-workout meal?
-Think of all the possibilities as we continue to learn about various JavaScript events.
+more compact (hint: "arrow functions")? Think of all the possibilities as we continue
+to learn about various JavaScript events.
