@@ -2,7 +2,7 @@
 
 ## Learning Goals
 
-- Create a JavaScript function that loops through a function array
+- Create a JavaScript function that loops through a function `Array`
 
 ## Introduction
 
@@ -10,77 +10,87 @@ To reiterate about functions in JavaScript as "first-class" objects, it can
 do all the things that regular objects can do, To illustrate this concept,
 we're going to create an array that contains a number of JavaScript functions.
 
-### Create a JavaScript Function That Loops Through a Function Array
+### Create a JavaScript Function That Loops Through a Function `Array`
 
 Remember our workout program from "Creating Functions in JavaScript"? Let's take
-this workout program and create function that will iterate over this weekly
+a similar concept, and create function that will iterate over a daily dog-walking
 routine.
 
 ```
-Monday:  
-- Go for a five-mile run
-- Pump iron
+console.log("Wake Byron the poodle");
+console.log("Leash Byron the poodle");
+console.log("Walk to the park Byron the poodle");
+console.log("Throw the fribsee for Byron the poodle");
+console.log("Walk home with Byron the poodle");
+console.log("Unleash Byron the poodle");
+```
 
-Tuesday:
-- Go for a five-mile run
-- Swim 40 laps
+Let's give this each activity its own function:
 
-Wednesday 
-- Go for a five-mile run
-- Go for a five-mile run
+```js
+function wakeDog() {
+  console.log("Wake Byron the poodle");
+}
+...
+```
 
-Thursday
-- Go for a five-mile run
-- Pump iron
+Continue this pattern for functions `leashDog`, `walkToPark`, and so on. Run `learn` to 
+execute the tests. The tests will cue you into the remaining expected functions
+that should exist.
 
-Friday
-- Go for a five-mile run
-- Swim 40 laps
+Let's take each function that we've created for activities and create variables for each. 
+Set them to the corresponding function names you originally created, like below:
+
+```js
+var wakeDog = function() {
+  console.log("Wake Byron the poodle");
 }
 ```
 
-Let's give each activity its own function, like we had done previously:
-```js
-function runFiveMiles() {
-  console.log('Go for a five-mile run');
-}
-function liftWeights() {
-  console.log('Pump iron');
-}
-function swimFortyLaps() {
-  console.log('Swim 40 laps');
-}
-```
-
-We're going to make our code more compact by passing in `postRunActivity`.
-This function will first execute `runFiveMiles` first, since each day's exercise
-routine starts with this activity. Our argument `postRunActivity` will run whichever
-named function is being passed in. This will reduce the amount of repitition we have
-in our code.
+Now that we have each activity set, we're going to create a function called `exerciseDog`.
+Notice that there is repetitious language in each activity. Imagine that we are
+professional dog sitters--the dog's name and breed might vary! Abstract out `${name}`
+and `${dogBreed}`.
 
 ```js
-function exerciseRoutine(postRunActivity) {
-  runFiveMiles();
-  postRunActivity();
-}
-```
-
-Now, let's take the list of each day's workout and create a named function for each. 
-Create variables for each day of the week to a variable, and set them to the corresponding
-functions, like below:
-
-```js
-var Monday = function() {
-  exerciseRoutine(liftWeights);
-}
+function exerciseDog(dogName, dogBreed) {
+...
+...
 ```
 
 Without further ado, let's create our "Array o' Functions!". Create a variable
-called `functionsArray` with your `monday` through `friday` constants as values
-in the array.
+called `routine`. This variable will be an `Array` all of the functions
+we've defined: `wakeDog`, `leashDog`, etc. 
 
-Lastly, create a function called `printRoutine` that will iterate over our `functionsArray`
-and print out this week's routine.
+Lastly, create the function called `exerciseDog` that will iterate over our `functionsArray`
+and return the full routine that includes a `dogName` and `dogBreed` passed in.
+
+Assign default arguments to your parameters, so that the parameters' values won't be
+`undefined`, and avoid errors that look like:
+
+```
+"Wake undefined the undefined"  // From: console.log("Wake ${dogName} the ${dogBreed}");
+```
+
+Instead, you can create something like this:
+
+```js
+function exerciseDog(dogName="Byron", dogBreed="poodle") {
+...
+```
+
+Now, when the function is run, you should always see results such as:
+
+```
+"Wake Byron the poodle"  // From: console.log("Wake ${dogName} the ${dogBreed}");
+```
+
+To recap, your code should contain:
+- Functions for each dog walking activity, set as variables
+- A variable called `routine` set to an `Array` that contains each dog walking
+function
+- A function called `exerciseDog` with default parameters set that iterates over
+the array and returns the full exercise routine.
 
 ## Conclusion
 
