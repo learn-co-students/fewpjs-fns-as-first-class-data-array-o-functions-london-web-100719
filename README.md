@@ -94,7 +94,8 @@ the array and returns the full exercise routine.
 
 ## Conclusion
 
-This lab demonstrates another method of leveraging the power of JavaScript functions--
-And there's still so much more! Can you think of ways to make writing each function
-more compact (hint: "arrow functions")? Think of all the possibilities as we continue
-to learn about various JavaScript events.
+This lab demonstrates the power of `Function`s as first-class data. We can
+stack them up in `Arrays` or assign them inside of `Objects` or save them
+to variables, or iterate over them. Instead of _merely_ having `Array`s of
+`String`s and other familiar items, we can stuff them with _work_. And that's
+nothing short of amazing!
