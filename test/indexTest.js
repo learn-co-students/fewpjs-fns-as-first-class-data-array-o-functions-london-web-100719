@@ -1,28 +1,41 @@
+var dogName = "Byron"
+var dogBreed = "poodle"
+
 describe("index.js", () => {
-  it("has a function runFiveMiles", () => {
-    expect(runFiveMiles()).to.equal('Go for a five-mile run')
+  it("has a function wakeDog", () => {
+    expect(wakeDog()).to.equal(`Wake ${dogName} the ${dogBreed}`)
   })
-  it("has a function liftWeights", () => {
-    expect(liftWeights()).to.equal('Pump iron')
+  it("has a function leashDog", () => {
+    expect(leashDog()).to.equal(`Leash ${dogName} the ${dogBreed}`)
   })
-  it("has a function swimFortyLaps", () => {
-    expect(swimFortyLaps()).to.equal('Swim 40 laps')
+  it("has a function walkToPark", () => {
+    expect(walkToPark()).to.equal(`Walk to the park with ${dogName} the ${dogBreed}`)
   })
-  it("has a function exerciseRoutine", () => {
-    expect(exerciseRoutine(liftWeights)).to.equal('Go for a five-mile run Pump iron')
+  it("has a function throwFrisbee", () => {
+    expect(throwFrisbee()).to.equal(`Throw the frisbee for ${dogName} the ${dogBreed}`)
   })
-  it("has a functions for each day of the week", () => {
-    expect(monday).to.exist
-    expect(tuesday).to.exist
-    expect(wednesday).to.exist
-    expect(thursday).to.exist
-    expect(friday).to.exist
+  it("has a function walkHome", () => {
+    expect(walkHome()).to.equal(`Walk home with ${dogName} the ${dogBreed}`)
   })
-  it("has a function functionsArray that contains an array of function values", () => {
-    expect(functionsArray).to.be.a('array');
-    expect(functionsArray).to.include(monday,tuesday,wednesday,thursday,friday);
+  it("has a function unleashDog", () => {
+    expect(unleashDog()).to.equal(`Unleash ${dogName} the ${dogBreed}`)
   })
-  it("has a function printRoutine that returns the full week's exercise routine", () => {
-    expect(functionsArray).to.have.members([monday,tuesday,wednesday,thursday,friday]);
+  it("accepts 2 parameters for dogName and dogBreed", () => {
+    expect(wakeDog("Skippy", "Welsh Corgi")).to.equal(`Wake Skippy the Welsh Corgi`)
+  })
+  it("has variables for each activity", () => {
+    expect(wakeDog).to.exist
+    expect(leashDog).to.exist
+    expect(walkToPark).to.exist
+    expect(throwFrisbee).to.exist
+    expect(walkHome).to.exist
+    expect(unleashDog).to.exist
+  })
+  it("has an array called 'routine' that contains each activity", () => {
+    expect(routine).to.be.a('array');
+    expect(routine).to.include(wakeDog,leashDog,walkToPark,throwFrisbee,walkHome,unleashDog);
+  })
+  it("has a function exerciseDog that returns the full day's dog exercise routine", () => {
+    expect(routine).to.have.members([wakeDog,leashDog,walkToPark,throwFrisbee,walkHome,unleashDog]);
   })
 })
