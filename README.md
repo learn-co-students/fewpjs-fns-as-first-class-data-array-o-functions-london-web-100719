@@ -49,14 +49,29 @@ function wakeDog(dogName, dogBreed) {
 ...
 ```
 
+**Additionally**: Each function should return the string that it creates. That
+is, we should create a `String`, `console.log()` it, and return that `String`.
 
-Continue writing "generalized" functions for functions `leashDog`,
-`walkToPark`, and so on. Run `learn` to execute the tests. The tests will cue
-you into the remaining expected functions that should exist.
+## Create the Array o' Functions
 
-Without further ado, let's create our "Array o' Functions!". Create a variable
-called `routine`. This variable will be an `Array` all of the functions we've
-defined: `wakeDog`, `leashDog`, etc.
+Continue writing "generalized" functions for
+
+* `wakeDog`
+* `leashDog`
+* `walkToPark`
+* `throwFrisbee`
+* `walkHome`
+* `unleashDog`
+
+Each function's implementation will be a generalized invocation of
+`console.log()`.
+
+## Create the Array o' Functions
+
+Next, create our "Array o' Functions!" Create a variable called `routine`. This
+variable will be an `Array` all of the functions we've just defined.
+
+## Create a Function to Process the Array o' Functions
 
 Lastly, create the function called `exerciseDog` that will take in two
 arguments:
@@ -64,13 +79,18 @@ arguments:
 * `dogName`
 * `dogBreed`
 
-It should then iterate over the `routine` `Array` and pass the `dogName` and
-`dogBreed` to the function as it is _called_.
+The function's implementation should
+
+* Iterate over the `routine` `Array`
+* Call each function in the array and
+* pass the `dogName` and `dogBreed` received by `exerciseDog()` to the function as they are _called_
+* capture the result of each function's call
+* return an `Array` of all those functions' return values
 
 ## Conclusion
 
 This lab demonstrates the power of `Function`s as first-class data. We can
-stack them up in `Arrays` or assign them inside of `Objects` or save them
-to variables, or iterate over them. Instead of _merely_ having `Array`s of
+stack them up in `Arrays` or assign them inside of `Objects` or save them to
+variables, or iterate over them. Instead of _merely_ having `Array`s of
 `String`s and other familiar items, we can stuff them with _work_. And that's
 nothing short of amazing!

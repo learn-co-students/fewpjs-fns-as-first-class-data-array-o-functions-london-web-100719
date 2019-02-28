@@ -1,41 +1,69 @@
-var dogName = "Byron"
-var dogBreed = "poodle"
+const sinon = require('sinon');
 
 describe("index.js", () => {
-  it("has a function wakeDog", () => {
-    expect(wakeDog()).to.equal(`Wake ${dogName} the ${dogBreed}`)
+  describe("independent functions", () => {
+    it("has a function wakeDog", () => {
+      const [a, b] = ["Xerox", "Border Collie"]
+      expect(wakeDog(a,b)).to.equal(`Wake ${a} the ${b}`)
+    })
+    it("has a function leashDog", () => {
+      const [a, b] = ["Boo Radley", "Pibble"]
+      expect(leashDog(a, b)).to.equal(`Leash ${a} the ${b}`)
+    })
+    it("has a function walkToPark", () => {
+      const [a, b] = ["Bunny", "Labrador"]
+      expect(walkToPark(a, b)).to.equal(`Walk to the park with ${a} the ${b}`)
+    })
+    it("has a function throwFrisbee", () => {
+      const [a, b] = ["Mary J. Blige", "Papillon"]
+      expect(throwFrisbee(a, b)).to.equal(`Throw the frisbee for ${a} the ${b}`)
+    })
+    it("has a function walkHome", () => {
+      const [a, b] = ["Santa Paws", "Husky"]
+      expect(walkHome(a, b)).to.equal(`Walk home with ${a} the ${b}`)
+    })
+    it("has a function unleashDog", () => {
+      const [a, b] = ["Lauren", "Golden Retriever"]
+      expect(unleashDog(a, b)).to.equal(`Unleash ${a} the ${b}`)
+    })
+    it("accepts 2 parameters for dogName and dogBreed", () => {
+      const [a, b] = ["Skippy", "Welsh Corgi"]
+      expect(wakeDog(a, b)).to.equal(`Wake Skippy the Welsh Corgi`)
+    })
   })
-  it("has a function leashDog", () => {
-    expect(leashDog()).to.equal(`Leash ${dogName} the ${dogBreed}`)
+
+  describe("the array of functions", () => {
+    it("has variables for each activity", () => {
+      expect(wakeDog).to.exist
+      expect(leashDog).to.exist
+      expect(walkToPark).to.exist
+      expect(throwFrisbee).to.exist
+      expect(walkHome).to.exist
+      expect(unleashDog).to.exist
+    })
+    it("has an array called 'routine' that contains each activity", () => {
+      expect(routine).to.be.a('array');
+      expect(routine).to.include(wakeDog,leashDog,walkToPark,throwFrisbee,walkHome,unleashDog);
+    })
   })
-  it("has a function walkToPark", () => {
-    expect(walkToPark()).to.equal(`Walk to the park with ${dogName} the ${dogBreed}`)
+
+  describe("the function that runs the array o' functions", () => {
+    it("calls into the independent functions", () => {
+      expect(routine).to.be.a('array');
+      expect(routine).to.include(wakeDog,leashDog,walkToPark,throwFrisbee,walkHome,unleashDog);
+      expect(throwFrisbee).to.exist
+
+      const executedMessages = exerciseDog("Esther", "Dalmation")
+
+      const successMessages = [ 'Wake Esther the Dalmation',
+        'Leash Esther the Dalmation',
+        'Walk to the park with Esther the Dalmation',
+        'Throw the frisbee for Esther the Dalmation',
+        'Walk home with Esther the Dalmation',
+        'Unleash Esther the Dalmation' ]
+
+      result = successMessages.every(msg => executedMessages.indexOf(msg) >= 0);
+      expect(result, "exerciseDog should run all the functions in the 'routine' array").true
+    })
   })
-  it("has a function throwFrisbee", () => {
-    expect(throwFrisbee()).to.equal(`Throw the frisbee for ${dogName} the ${dogBreed}`)
-  })
-  it("has a function walkHome", () => {
-    expect(walkHome()).to.equal(`Walk home with ${dogName} the ${dogBreed}`)
-  })
-  it("has a function unleashDog", () => {
-    expect(unleashDog()).to.equal(`Unleash ${dogName} the ${dogBreed}`)
-  })
-  it("accepts 2 parameters for dogName and dogBreed", () => {
-    expect(wakeDog("Skippy", "Welsh Corgi")).to.equal(`Wake Skippy the Welsh Corgi`)
-  })
-  it("has variables for each activity", () => {
-    expect(wakeDog).to.exist
-    expect(leashDog).to.exist
-    expect(walkToPark).to.exist
-    expect(throwFrisbee).to.exist
-    expect(walkHome).to.exist
-    expect(unleashDog).to.exist
-  })
-  it("has an array called 'routine' that contains each activity", () => {
-    expect(routine).to.be.a('array');
-    expect(routine).to.include(wakeDog,leashDog,walkToPark,throwFrisbee,walkHome,unleashDog);
-  })
-  it("has a function exerciseDog that returns the full day's dog exercise routine", () => {
-    expect(routine).to.have.members([wakeDog,leashDog,walkToPark,throwFrisbee,walkHome,unleashDog]);
-  })
-})
+});
