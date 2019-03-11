@@ -1,5 +1,3 @@
-const sinon = require('sinon');
-
 describe("index.js", () => {
   describe("independent functions", () => {
     it("has a function wakeDog", () => {
