@@ -1,31 +1,38 @@
 describe("index.js", () => {
   describe("independent functions", () => {
     it("has a function wakeDog", () => {
-      const [a, b] = ["Xerox", "Border Collie"]
+      const a = "Xerox"
+      const b = "Border Collie"
       expect(wakeDog(a,b)).to.equal(`Wake ${a} the ${b}`)
     })
     it("has a function leashDog", () => {
-      const [a, b] = ["Boo Radley", "Pibble"]
+      const a = "Boo Radley"
+      const b = "Pibble"
       expect(leashDog(a, b)).to.equal(`Leash ${a} the ${b}`)
     })
     it("has a function walkToPark", () => {
-      const [a, b] = ["Bunny", "Labrador"]
+      const a = "Bunny"
+      const b = "Labrador"
       expect(walkToPark(a, b)).to.equal(`Walk to the park with ${a} the ${b}`)
     })
     it("has a function throwFrisbee", () => {
-      const [a, b] = ["Mary J. Blige", "Papillon"]
+      const a = "Mary J. Blige"
+      const b = "Papillon"
       expect(throwFrisbee(a, b)).to.equal(`Throw the frisbee for ${a} the ${b}`)
     })
     it("has a function walkHome", () => {
-      const [a, b] = ["Santa Paws", "Husky"]
+      const a = "Santa Paws"
+      const b = "Husky"
       expect(walkHome(a, b)).to.equal(`Walk home with ${a} the ${b}`)
     })
     it("has a function unleashDog", () => {
-      const [a, b] = ["Lauren", "Golden Retriever"]
+      const a = "Lauren"
+      const b = "Golden Retriever"
       expect(unleashDog(a, b)).to.equal(`Unleash ${a} the ${b}`)
     })
     it("accepts 2 parameters for dogName and dogBreed", () => {
-      const [a, b] = ["Skippy", "Welsh Corgi"]
+      const a = "Skippy"
+      const b = "Welsh Corgi"
       expect(wakeDog(a, b)).to.equal(`Wake Skippy the Welsh Corgi`)
     })
   })
