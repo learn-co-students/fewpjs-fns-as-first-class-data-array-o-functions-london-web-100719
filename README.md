@@ -6,7 +6,7 @@
 
 ## Introduction
 
-Since functions JavaScript are "first-class" objects, it means they can be
+Since functions in JavaScript are "first-class" objects, it means they can be
 treated like any other data type in JavaScript (`Number`, `String`, et al.).  A
 fun way to experience this truth is to load up an `Array` of `Functions` and
 then call each `Function`.
