@@ -94,3 +94,6 @@ stack them up in `Arrays` or assign them inside of `Objects` or save them to
 variables, or iterate over them. Instead of _merely_ having `Array`s of
 `String`s and other familiar items, we can stuff them with _work_. And that's
 nothing short of amazing!
+
+[First Class Functions MDN](https://developer.mozilla.org/en-US/docs/Glossary/First-class_Function)
+[First Class Functions Hackernoon](https://hackernoon.com/javascript-and-functional-programming-pt-2-first-class-functions-4437a1aec217)
