@@ -54,7 +54,7 @@ is, we should create a `String`, `console.log()` it, and return that `String`.
 
 ## Create the Array o' Functions
 
-Continue writing "generalized" functions for
+Continue writing _"generalized"_ functions for
 
 * `wakeDog`
 * `leashDog`
