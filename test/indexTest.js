@@ -51,6 +51,7 @@ describe("index.js", () => {
       expect(routine).to.include(wakeDog,leashDog,walkToPark,throwFrisbee,walkHome,unleashDog);
     })
   })
+  
 
   describe("the function that runs the array o' functions", () => {
     it("calls into the independent functions", () => {
