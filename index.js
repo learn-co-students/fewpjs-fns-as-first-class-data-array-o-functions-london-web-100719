@@ -27,9 +27,5 @@ let routine = [
 ]
 
 function exerciseDog(name, breed) {
-    let result_array = []
-    for (let i=0; i<routine.length; i++) {
-        result_array.push(routine[i](name, breed));
-    }
-    return result_array;
+    return routine.map(fn => fn(name, breed))
 }
