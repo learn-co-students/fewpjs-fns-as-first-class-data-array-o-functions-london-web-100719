@@ -50,7 +50,7 @@ function wakeDog(dogName, dogBreed) {
 ```
 
 **Additionally**: Each function should return the string that it creates. That
-is, we should create a `String`, `console.log()` it, and return that `String`.
+is, we should create a `String`, log it to the console (using `console.log()`), and return that `String`.
 
 ## Create the Array o' Functions
 
