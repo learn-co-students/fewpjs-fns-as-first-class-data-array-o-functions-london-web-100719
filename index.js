@@ -30,6 +30,17 @@ var unleashDog = function(dogName="Byron", dogBreed="poodle") {
 
 const routine = [wakeDog,leashDog,walkToPark,throwFrisbee,walkHome,unleashDog]
 
+// solution using map
 function exerciseDog(dog, breed) {
   return routine.map(fn => fn(dog, breed))
 }
+
+// solution using forEach
+// function exerciseDog(dog, breed) {
+//   const exercises = []
+//   routine.forEach(fn => {
+//     const exercise = fn(dog, breed)
+//     exercises.push(exercise)
+//   })
+//   return exercises
+// }
