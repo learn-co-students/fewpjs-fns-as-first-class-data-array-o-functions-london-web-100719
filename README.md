@@ -18,7 +18,7 @@ activities we take in caring for Byron the Poodle.
 
 When this program runs, it should print out:
 
-```
+```txt
 console.log("Wake Byron the poodle");
 console.log("Leash Byron the poodle");
 console.log("Walk to the park with Byron the poodle");
@@ -49,43 +49,54 @@ function wakeDog(dogName, dogBreed) {
 ...
 ```
 
-**Additionally**: Each function should return the string that it creates. That
-is, we should create a `String`, log it to the console (using `console.log()`), and return that `String`.
+**Additionally**: Each function should **return** the string that it creates.
+That is, we should create a `String`, log it to the console (using
+`console.log()`), and return that `String`.
 
-## Create the Array o' Functions
+Continue writing _"generalized"_ functions for:
 
-Continue writing _"generalized"_ functions for
-
-* `wakeDog`
-* `leashDog`
-* `walkToPark`
-* `throwFrisbee`
-* `walkHome`
-* `unleashDog`
+- `wakeDog`
+- `leashDog`
+- `walkToPark`
+- `throwFrisbee`
+- `walkHome`
+- `unleashDog`
 
 Each function's implementation will be a generalized invocation of
 `console.log()`.
 
 ## Create the Array o' Functions
 
-Next, create our "Array o' Functions!" Create a variable called `routine`. This
-variable will be an `Array` all of the functions we've just defined.
+Next, create our "Array o' Functions!"
+
+Create a variable called `routine`. This variable will be an `Array` all of the
+functions we've just defined.
+
+Note that this array should hold _references_ to each of the functions.
 
 ## Create a Function to Process the Array o' Functions
 
 Lastly, create the function called `exerciseDog` that will take in two
 arguments:
 
-* `dogName`
-* `dogBreed`
+- `dogName`
+- `dogBreed`
 
-The function's implementation should
+In the `exerciseDog` function, your goal is to call every function in the `routine` array with the `dogName` and `dogBreed`, and return a **new array** with
+the return values from each of those function calls.
 
-* Iterate over the `routine` `Array`
-* Call each function in the array and
-* pass the `dogName` and `dogBreed` received by `exerciseDog()` to the function as they are _called_
-* capture the result of each function's call
-* return an `Array` of all those functions' return values
+To break that down into steps, `exerciseDog` should:
+
+- **Iterate** over the `routine` array to get access to each function in the array
+- **Call** each function in the array, passing the `dogName` and `dogBreed`
+  received by `exerciseDog()` to each function when calling it
+- Store the return value of each function's call in a **new array**
+- Return that **new array** from `exerciseDog`
+
+There are several ways of implementing the `exerciseDog` function; what's
+important is that you are able to iterate over the functions in the `routine`
+array and return a new array with the return values after calling each function.
+Think about what array methods can help you accomplish that goal.
 
 ## Conclusion
 
@@ -95,5 +106,7 @@ variables, or iterate over them. Instead of _merely_ having `Array`s of
 `String`s and other familiar items, we can stuff them with _work_. And that's
 nothing short of amazing!
 
-[First Class Functions MDN](https://developer.mozilla.org/en-US/docs/Glossary/First-class_Function)
+## Resources
 
+- [First Class Functions MDN](https://developer.mozilla.org/en-US/docs/Glossary/First-class_Function)
+- [Array Map Method MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)
